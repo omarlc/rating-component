@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Interactive rating component</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card" id="main">
+        <img src="./images/icon-star.svg" alt="star-icon" class="icon" />
+        <h1 class="title">How did we do?</h1>
+        <p>
+          Please let us know how we did with your support request. All feedback
+          is appreciated to help us improve our offering!
+        </p>
+        <div class="ratings">
+          <label for="1">
+            <input type="radio" name="rating" value="1" id="1" />
+            <p>1</p>
+          </label>
+          <label for="2">
+            <input type="radio" name="rating" value="2" id="2" />
+            <p>2</p>
+          </label>
+          <label for="3">
+            <input type="radio" name="rating" value="3" id="3" />
+            <p>3</p>
+          </label>
+          <label for="4">
+            <input type="radio" name="rating" value="4" id="4" />
+            <p>4</p>
+          </label>
+          <label for="5">
+            <input type="radio" name="rating" value="5" id="5" />
+            <p>5</p>
+          </label>
+        </div>
+        <button class="button__primary" onclick="submit()">Submit</button>
+      </div>
+      <div class="card__thank-you hidden" id="thanks">
+        <img src="./images/illustration-thank-you.svg" alt="thank-you" />
+        <p id="selection"></p>
+        <h1>Thank You!</h1>
+        <p>
+          We appreciate you taking the time to give a rating. If you ever need
+          more support, dont't hesitate to get in touch!
+        </p>
+      </div>
+    </div>
+    <script>
+      function submit(e) {
+        const value = document.querySelector(
+          'input[name="rating"]:checked'
+        ).value;
+
+        let main = document.getElementById("main");
+        main.classList.add("hidden");
+
+        let thanks = document.getElementById("thanks");
+        thanks.classList.toggle("hidden");
+
+        document.getElementById(
+          "selection"
+        ).innerHTML = `You selected ${value} out of 5`;
+      }
+    </script>
+    <!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+  </body>
+</html>

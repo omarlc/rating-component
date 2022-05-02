@@ -1,0 +1,180 @@
+:root {
+  --orange: hsl(25, 97%, 53%);
+  --white: hsl(0, 0%, 100%);
+  --light-grey: hsl(217, 12%, 63%);
+  --medium-grey: hsl(216, 12%, 54%);
+  --dark-blue: hsl(213, 19%, 18%);
+  --very-dark-blue: hsl(216, 12%, 8%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: "Overpass", sans-serif;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--very-dark-blue);
+}
+
+.card {
+  background-color: var(--dark-blue);
+  width: 330px;
+  height: 360px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 25px;
+}
+
+.card h1 {
+  color: var(--white);
+  font-size: 26px;
+  font-weight: 500;
+}
+
+.icon {
+  width: fit-content;
+  height: fit-content;
+  padding: 10px;
+  background-color: hsl(213, 19%, 25%);
+  border-radius: 50%;
+}
+
+.card p {
+  color: var(--light-grey);
+}
+
+.ratings {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+}
+
+.ratings label {
+  cursor: pointer;
+  position: relative;
+}
+
+input[type="radio"] {
+  opacity: 0;
+  position: absolute;
+}
+
+input[type="radio"] + p {
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  padding: 10px;
+  background-color: var(--light-grey);
+  font-size: 15px;
+  color: var(--white);
+  text-align: center;
+}
+
+input[type="radio"] + p {
+  width: 35px;
+  background-color: #262f38;
+  border-radius: 50%;
+  padding: 10px;
+  color: var(--light-grey);
+  font-size: 15px;
+}
+
+input[type="radio"]:hover + p {
+  color: var(--white);
+  background-color: var(--medium-grey);
+}
+
+input[type="radio"]:checked + p {
+  color: var(--white);
+  background-color: var(--orange);
+}
+
+input[type="radio"]:focus + p {
+  color: #fff;
+}
+
+.button__primary {
+  font-family: "Overpass", sans-serif;
+  color: var(--white);
+  text-transform: uppercase;
+  background-color: var(--orange);
+  border-radius: 20px;
+  padding: 8px;
+  border: 0;
+  outline: 0;
+}
+
+.button__primary:hover {
+  cursor: pointer;
+  color: var(--orange);
+  text-transform: uppercase;
+  background-color: var(--white);
+  border: 0;
+  outline: 0;
+}
+
+#selection {
+  color: var(--orange);
+  background-color: hsl(213, 19%, 25%);
+  border-radius: 25px;
+  text-align: center;
+  padding: 8px;
+}
+
+.card__thank-you {
+  background-color: var(--dark-blue);
+  width: 330px;
+  height: 360px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 25px;
+}
+
+.card__thank-you h1 {
+  color: var(--white);
+  font-size: 26px;
+  font-weight: 500;
+}
+
+.card__thank-you p {
+  color: var(--light-grey);
+  text-align: center;
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+.card__thank-you img {
+  margin-bottom: 15px;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (min-width: 450px) {
+  .card {
+    width: 410px;
+    height: 440px;
+  }
+
+  .card__thank-you {
+    width: 410px;
+    height: 440px;
+  }
+}
